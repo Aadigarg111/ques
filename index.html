@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 50 Java Q&A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add a little custom style for better readability */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as recommended */
+        }
+        /* Style for the list items */
+        ul li {
+            position: relative;
+            padding-left: 1.25rem; /* Space for the bullet */
+            margin-bottom: 0.25rem; /* Space between bullet points */
+        }
+        ul li::before {
+            content: '•'; /* Bullet character */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #3b82f6; /* Tailwind blue-500 */
+            font-weight: bold;
+        }
+    </style>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-blue-600">Top 50 Java Q&A</h1>
+            <p class="text-lg text-gray-600 mt-2">Key questions covering Units I-IV</p>
+        </header>
+
+        <main>
+            <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-blue-700 border-b pb-2">Unit 1: Java Basics & How it Works (JVM)</h2>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is Java in simple terms?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Widely used, object-oriented programming language.</li>
+                        <li>Designed for platform independence ("Write Once, Run Anywhere").</li>
+                        <li>Used for web apps, mobile apps, enterprise systems, etc.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What are some main features of Java?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Object-Oriented:</strong> Organizes code around objects (data + behavior).</li>
+                        <li><strong>Platform-Independent (WORA):</strong> Runs on any machine with a JVM via bytecode.</li>
+                        <li><strong>Simple:</strong> Relatively easy to learn (no explicit pointers, etc.).</li>
+                        <li><strong>Secure:</strong> Features like bytecode verification, Security Manager.</li>
+                        <li><strong>Robust:</strong> Strong type-checking, exception handling, garbage collection.</li>
+                        <li><strong>Multithreaded:</strong> Supports concurrent execution.</li>
+                        <li><strong>High Performance:</strong> Uses JIT compilation for speed.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What does "Write Once, Run Anywhere" mean in Java?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Compile Java code once into platform-neutral bytecode (.class files).</li>
+                        <li>Run the same bytecode on any device with a compatible JVM.</li>
+                        <li>JVM translates bytecode to native machine code for the specific platform.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: How does a Java program run (simple steps)?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Write:</strong> Create .java source code files.</li>
+                        <li><strong>Compile:</strong> Use `javac` to create .class bytecode files.</li>
+                        <li><strong>Load:</strong> Use `java` to start JVM; JVM's Class Loader loads .class files.</li>
+                        <li><strong>Verify:</strong> Bytecode Verifier checks code safety and correctness.</li>
+                        <li><strong>Execute:</strong> Execution Engine interprets bytecode and/or uses JIT compilation to run native code.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What does the `javac` command do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>It's the Java Compiler (part of JDK).</li>
+                        <li>Reads .java source files.</li>
+                        <li>Checks for syntax and type errors.</li>
+                        <li>Translates source code into Java bytecode (.class files).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What does the `java` command do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>It's the Java Application Launcher (part of JRE/JDK).</li>
+                        <li>Starts the Java Virtual Machine (JVM).</li>
+                        <li>Loads the specified main class.</li>
+                        <li>Begins execution by calling the `main` method.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is bytecode?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Low-level, platform-independent instruction set.</li>
+                        <li>Generated by the Java compiler (`javac`).</li>
+                        <li>Executed by the Java Virtual Machine (JVM).</li>
+                        <li>Enables "Write Once, Run Anywhere".</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is the JVM (Java Virtual Machine)?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>An abstract machine specification and a concrete software implementation.</li>
+                        <li>Provides the runtime environment for executing Java bytecode.</li>
+                        <li>Handles class loading, verification, memory management (GC), and execution.</li>
+                        <li>Makes Java platform-independent.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What's the difference between JDK, JRE, and JVM?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>JVM:</strong> Executes bytecode (the "engine").</li>
+                        <li><strong>JRE:</strong> JVM + Core Java Libraries (needed to *run* Java apps).</li>
+                        <li><strong>JDK:</strong> JRE + Development Tools (compiler `javac`, debugger, etc.) (needed to *develop* Java apps).</li>
+                        <li><strong>Hierarchy:</strong> JDK contains JRE, which contains JVM.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What does the Bytecode Verifier do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Security component within the JVM.</li>
+                        <li>Checks loaded bytecode *before* execution.</li>
+                        <li>Ensures code adheres to JVM specs, is safe, and won't corrupt the JVM (checks types, stack, access rules).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: Where does the JVM store things in memory?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Heap:</strong> Stores all objects and arrays (shared among threads, managed by GC).</li>
+                        <li><strong>Java Stack:</strong> Stores method call frames (local variables, operand stack) for each thread (thread-private).</li>
+                        <li><strong>Method Area:</strong> Stores class-level data (bytecode, static variables, runtime constants) (shared among threads).</li>
+                        <li><strong>PC Registers:</strong> Stores current instruction address for each thread (thread-private).</li>
+                        <li><strong>Native Method Stacks:</strong> Used for non-Java (native) code execution (thread-private).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is Garbage Collection (GC)?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Automatic memory management process in the JVM.</li>
+                        <li>Identifies and reclaims memory in the Heap used by objects that are no longer referenced.</li>
+                        <li>Prevents memory leaks and eliminates the need for manual memory deallocation.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is the Java Sandbox?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>A restricted execution environment for untrusted code (e.g., old applets).</li>
+                        <li>Limits code's access to system resources (files, network) based on a security policy.</li>
+                        <li>Enforced by the Security Manager.</li>
+                        <li>Protects the host system from malicious code.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-blue-700 border-b pb-2">Unit 2: Java Programming Basics</h2>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What are primitive data types in Java?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Basic, non-object data types built into Java.</li>
+                        <li>Hold actual values directly.</li>
+                        <li>Eight types: `byte`, `short`, `int`, `long`, `float`, `double`, `char`, `boolean`.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What's the difference between primitive and reference types?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Primitives:</strong> Store actual value; fixed size; live on stack (if local); cannot be `null`.</li>
+                        <li><strong>References:</strong> Store memory address (pointer) to an object on the Heap; object size varies; can be `null`.</li>
+                        <li><strong>Examples:</strong> Primitives (`int`, `boolean`); References (`String`, `ArrayList`, arrays, any class).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What are Wrapper Classes? (e.g., `Integer`)</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Classes that wrap primitive values into objects (e.g., `Integer` for `int`).</li>
+                        <li>Needed for Collections (which store objects), utility methods, generics, allowing `null`.</li>
+                        <li>Support autoboxing (primitive -> wrapper) and unboxing (wrapper -> primitive).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: How do you create an array?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Declare:</strong> `int[] scores;` (Declare a reference variable).</li>
+                        <li><strong>Instantiate:</strong> `scores = new int[10];` (Create the array object of a fixed size in memory).</li>
+                        <li><strong>Initialize (Optional):</strong> `int[] scores = {95, 88, 72};` (Combine declaration, instantiation, initialization).</li>
+                        <li>Access elements using zero-based index: `scores[0]`.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What's the difference between `==` and `.equals()` for objects?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>`==`</strong>: Compares memory addresses (reference equality). Checks if two variables point to the *exact same object instance*.</li>
+                        <li><strong>`.equals()`</strong>: Compares object content/state (value equality). Checks if two objects are meaningfully equivalent. (Must be overridden correctly, e.g., in `String`).</li>
+                        <li><strong>Guideline:</strong> Use `.equals()` for object content comparison (esp. Strings), `==` for primitives or exact instance check.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What do `if-else` and `switch` do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>`if-else`</strong>: Executes code blocks based on boolean conditions (`if`, `else if`, `else`). Handles complex conditions.</li>
+                        <li><strong>`switch`</strong>: Selects a code block based on the value of an expression (`byte`, `short`, `char`, `int`, `String`, `enum`). Uses `case` labels, `break` (to prevent fall-through), and optional `default`. Often clearer for multiple discrete values.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What do `while` and `for` loops do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>`while`</strong>: Repeats code while a condition is true (checked *before* each iteration).</li>
+                        <li><strong>`do-while`</strong>: Repeats code while a condition is true (checked *after* each iteration; runs at least once).</li>
+                        <li><strong>`for`</strong>: Structured loop with initialization, condition, and update parts (often used for counter-based iteration).</li>
+                        <li><strong>Enhanced `for` (for-each)</strong>: Simple syntax to iterate over elements in arrays or collections.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is a Class? What is an Object?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Class:</strong> A blueprint or template defining properties (fields) and behaviors (methods) for objects.</li>
+                        <li><strong>Object:</strong> An instance of a class; a concrete entity created from the blueprint, existing in memory (Heap), with its own state.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What do `public`, `private`, etc. (access modifiers) mean?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Control visibility/accessibility:</li>
+                        <li>`public`: Accessible from anywhere.</li>
+                        <li>`private`: Accessible only within the declaring class.</li>
+                        <li>`protected`: Accessible within the package and by subclasses (even in different packages).</li>
+                        <li>`default` (package-private): Accessible only within the same package.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What does the `static` keyword do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Indicates a member belongs to the *class itself*, not individual objects.</li>
+                        <li><strong>Static Variable:</strong> One copy shared by all instances. Accessed via `ClassName.variableName`.</li>
+                        <li><strong>Static Method:</strong> Called via `ClassName.methodName()`. Cannot directly access instance members (`this`). Used for utilities, `main` method.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is an Interface?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>A reference type defining a contract of abstract methods (and constants, default/static methods).</li>
+                        <li>Cannot be instantiated directly.</li>
+                        <li>A class `implements` an interface, promising to provide code for its abstract methods.</li>
+                        <li>Supports multiple inheritance of type (a class can implement many interfaces).</li>
+                        <li>Used for polymorphism and defining capabilities.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is an Abstract Class?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>A class declared `abstract`; cannot be instantiated directly.</li>
+                        <li>Designed to be extended (subclassed).</li>
+                        <li>Can contain both `abstract` methods (no implementation) and concrete methods (with implementation).</li>
+                        <li>Subclasses must implement inherited abstract methods (unless they are also abstract).</li>
+                        <li>Can have fields and constructors.</li>
+                        <li>A class can `extend` only one abstract (or concrete) class.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is Inheritance? (`extends`)</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Mechanism where a subclass acquires fields and methods from a superclass.</li>
+                        <li>Uses the `extends` keyword.</li>
+                        <li>Establishes an "is-a" relationship.</li>
+                        <li>Promotes code reuse and polymorphism.</li>
+                        <li>Java supports single class inheritance, multiple interface implementation.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is Method Overriding?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>A subclass provides its own implementation for a method inherited from its superclass.</li>
+                        <li>Must have the same signature (name, parameters) and same/covariant return type.</li>
+                        <li>Access level cannot be more restrictive.</li>
+                        <li>`final` methods cannot be overridden.</li>
+                        <li>Use `@Override` annotation for safety.</li>
+                        <li>Enables runtime polymorphism.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is Method Overloading?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Defining multiple methods with the *same name* but *different parameter lists* within the *same class*.</li>
+                        <li>Difference can be number, type, or order of parameters.</li>
+                        <li>Return type alone is not enough.</li>
+                        <li>Resolved at compile time (static polymorphism).</li>
+                        <li>Used for providing variations of a method.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is an Exception?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>An event during program execution that disrupts the normal flow (e.g., `ArithmeticException`, `NullPointerException`, `FileNotFoundException`).</li>
+                        <li>Represented by objects inheriting from `Throwable`.</li>
+                        <li>Signals an error or unexpected condition.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: How do you handle exceptions? (`try`, `catch`, `finally`)</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>`try`</strong>: Enclose code that might throw an exception.</li>
+                        <li><strong>`catch`</strong>: Handle specific exception types thrown in `try`. Executes if a matching exception occurs.</li>
+                        <li><strong>`finally`</strong>: Optional block guaranteed to execute after `try` (and any `catch`), regardless of exceptions. Used for cleanup (e.g., closing resources).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What's the difference between `String` and `StringBuffer`/`StringBuilder`?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>`String`</strong>: Immutable (cannot be changed after creation). Operations create new `String` objects. Thread-safe.</li>
+                        <li><strong>`StringBuffer`</strong>: Mutable (can be changed). Operations modify the object in place. Thread-safe (synchronized methods). Slower due to synchronization.</li>
+                        <li><strong>`StringBuilder`</strong>: Mutable. Operations modify in place. **Not** thread-safe. Faster than `StringBuffer`.</li>
+                        <li><strong>Use:</strong> `String` for constants, `StringBuilder` for single-threaded modifications, `StringBuffer` for multi-threaded modifications.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-blue-700 border-b pb-2">Unit 3: Doing Multiple Things at Once (Threads) & GUIs (AWT)</h2>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is a Thread?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Smallest unit of execution within a process.</li>
+                        <li>Allows concurrent execution of tasks within a program.</li>
+                        <li>Threads in the same process share memory (Heap, Method Area).</li>
+                        <li>Used for responsiveness, concurrency, parallelism.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: How can you create a Thread? (Two ways)</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Extend `Thread` Class:</strong> Subclass `Thread`, override `run()`. Create instance, call `start()`. (Limits further inheritance).</li>
+                        <li><strong>Implement `Runnable` Interface:</strong> Implement `Runnable`, provide `run()`. Create `Runnable` instance, pass to `new Thread()`, call `start()` on `Thread` object. (Preferred way - more flexible).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: How do you start a Thread?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Call the `start()` method on the `Thread` object.</li>
+                        <li>`start()` allocates resources, schedules the thread, and invokes its `run()` method in a new thread of execution.</li>
+                        <li><strong>Never</strong> call `run()` directly; it executes in the current thread, not concurrently.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is Thread Synchronization? (`synchronized`)</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Mechanism to control access to shared resources by multiple threads.</li>
+                        <li>Prevents race conditions and data corruption.</li>
+                        <li>Uses the `synchronized` keyword:</li>
+                        <li>    <strong>Synchronized Method:</strong> Locks the object (`this`) before execution.</li>
+                        <li>    <strong>Synchronized Block:</strong> Locks a specified object before executing the block.</li>
+                        <li>Ensures only one thread executes the critical section at a time for the locked object.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What do `wait()`, `notify()`, `notifyAll()` do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Methods of `java.lang.Object` for inter-thread communication.</li>
+                        <li><strong>Must</strong> be called within a `synchronized` block/method on the object being used for coordination.</li>
+                        <li><strong>`wait()`:</strong> Releases lock, thread waits until notified (or timeout/interrupted). Must re-acquire lock to proceed. Usually used in a loop checking a condition.</li>
+                        <li><strong>`notify()`:</strong> Wakes up *one* arbitrary waiting thread on the object's monitor.</li>
+                        <li><strong>`notifyAll()`:</strong> Wakes up *all* waiting threads on the object's monitor. (Generally safer).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is AWT?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Abstract Window Toolkit - Java's original GUI framework.</li>
+                        <li>Platform-dependent: Uses native OS components ("peers"). Look and feel varies across OS.</li>
+                        <li>Provides basic components (`Button`, `Frame`, etc.), layout managers, event handling.</li>
+                        <li>Largely superseded by Swing and JavaFX but foundational.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What's a Layout Manager in AWT?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Object responsible for positioning and sizing components within a container.</li>
+                        <li>Handles GUI arrangement automatically, adapting to resizing and platform differences.</li>
+                        <li>Examples: `FlowLayout` (rows), `BorderLayout` (regions), `GridLayout` (grid), `GridBagLayout` (flexible grid).</li>
+                        <li>Set on a container using `setLayout()`.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: How does event handling work in AWT? (Source, Event, Listener)</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Uses the Event Delegation Model:</li>
+                        <li>    <strong>Source:</strong> Component where event originates (e.g., `Button`).</li>
+                        <li>    <strong>Event:</strong> Object describing the event (e.g., `ActionEvent`, `MouseEvent`).</li>
+                        <li>    <strong>Listener:</strong> Object implementing a listener interface (e.g., `ActionListener`), registered with the source, containing handler methods (e.g., `actionPerformed()`) that are called when the event occurs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-blue-700 border-b pb-2">Unit 4: Input/Output, Databases, Networking, Collections</h2>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What's the difference between Byte Streams and Character Streams in I/O?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>Byte Streams (`InputStream`/`OutputStream`):</strong> Handle raw 8-bit binary data. Use for non-text files (images, etc.) or binary network data.</li>
+                        <li><strong>Character Streams (`Reader`/`Writer`):</strong> Handle 16-bit Unicode character data. Automatically handle character encoding/decoding. Use for text files.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What do Buffered Streams do?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Improve I/O performance using an internal memory buffer.</li>
+                        <li>Read/write data in larger chunks, reducing system calls.</li>
+                        <li>Wrap around existing streams (e.g., `BufferedReader(new FileReader(...))`).</li>
+                        <li>Recommended for most file/network I/O.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is JDBC?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Java Database Connectivity - standard Java API (`java.sql`, `javax.sql`) for database interaction.</li>
+                        <li>Allows Java apps to connect to databases, send SQL queries, process results.</li>
+                        <li>Provides database independence (using specific JDBC drivers).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What are the basic steps for using JDBC?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>1. <strong>Load/Register Driver:</strong> (Often automatic now).</li>
+                        <li>2. <strong>Establish Connection:</strong> `DriverManager.getConnection(url, user, pass)` -> `Connection`.</li>
+                        <li>3. <strong>Create Statement:</strong> `connection.createStatement()` -> `Statement` (or `PreparedStatement`).</li>
+                        <li>4. <strong>Execute Query:</strong> `statement.executeQuery(sql)` -> `ResultSet` (for SELECT); `statement.executeUpdate(sql)` -> `int` (for INSERT/UPDATE/DELETE).</li>
+                        <li>5. <strong>Process ResultSet:</strong> Loop `while(resultSet.next())`, use `resultSet.getXXX()` methods.</li>
+                        <li>6. <strong>Close Resources:</strong> Close `ResultSet`, `Statement`, `Connection` (use `finally` or try-with-resources).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is Object Serialization?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Converting an object's state into a byte stream.</li>
+                        <li>Used for persistence (saving to file), communication (sending over network, RMI), caching.</li>
+                        <li>Class must `implement Serializable` (marker interface).</li>
+                        <li>Fields not marked `transient` are serialized.</li>
+                        <li>Reverse process is Deserialization (byte stream -> object).</li>
+                        <li>Uses `ObjectOutputStream` / `ObjectInputStream`.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is a Socket?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>An endpoint for network communication between two programs.</li>
+                        <li>Uses protocols like TCP (reliable) or UDP (faster, connectionless).</li>
+                        <li>Java classes (`java.net`):</li>
+                        <li>    `Socket`: Client-side endpoint (connects to server).</li>
+                        <li>    `ServerSocket`: Server-side endpoint (listens for client connections via `accept()`).</li>
+                        <li>Provides `InputStream`/`OutputStream` for sending/receiving data.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is the Java Collections Framework?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Unified architecture (`java.util`) for storing and manipulating groups of objects.</li>
+                        <li>Key parts: Interfaces (`List`, `Set`, `Map`), Implementations (`ArrayList`, `HashSet`, `HashMap`), Algorithms (`Collections.sort()`).</li>
+                        <li>Benefits: Reduces effort, increases performance, promotes reuse, improves quality.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What's the difference between a `List` and a `Set`?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li><strong>`List`</strong>: Ordered sequence, allows duplicates, access by index (`ArrayList`, `LinkedList`).</li>
+                        <li><strong>`Set`</strong>: Unordered (usually), **no duplicates**, no index access (`HashSet`, `TreeSet`, `LinkedHashSet`).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is a `Map`?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Collection of unique key-value pairs.</li>
+                        <li>Retrieve value based on its key (`get(key)`).</li>
+                        <li>Keys must be unique.</li>
+                        <li>Order depends on implementation (`HashMap`=unordered, `TreeMap`=sorted by key, `LinkedHashMap`=insertion order).</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is an `Iterator`?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Standard interface to traverse elements in a collection sequentially.</li>
+                        <li>Methods: `hasNext()` (check if more elements), `next()` (get next element), `remove()` (optional, safely remove last element retrieved).</li>
+                        <li>Obtained via collection's `iterator()` method.</li>
+                        <li>Enhanced `for` loop uses an Iterator implicitly for collections.</li>
+                    </ul>
+                </div>
+
+                 <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Q: What is RMI (Remote Method Invocation)?</h3>
+                    <ul class="list-none text-gray-700 text-sm sm:text-base">
+                        <li>Java mechanism allowing objects in one JVM to call methods on objects in another JVM (potentially on different machines).</li>
+                        <li>Simplifies distributed programming in Java.</li>
+                        <li>Uses remote interfaces, stubs (client proxy), and registry (naming service).</li>
+                        <li>Handles network communication and data marshalling/unmarshalling.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-10 pt-4 border-t border-gray-300">
+            <p class="text-sm text-gray-500">&copy; 2025 Java Q&A Study Guide</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
