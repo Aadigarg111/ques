@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva Q&A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        .unit-header {
+            background-color: #3b82f6; /* Blue-600 */
+            color: white;
+        }
+        .question-block {
+            background-color: #ffffff; /* White background for Q&A block */
+            border: 1px solid #e5e7eb; /* Light gray border */
+        }
+        .question-text {
+            color: #1e3a8a; /* Darker blue for question text */
+            font-weight: 600; /* Semi-bold for question */
+        }
+        .answer-text strong { /* For the "A:" part */
+            color: #1e40af; /* Even darker blue for "A:" */
+        }
+        .answer-text {
+            color: #374151; /* Dark gray for answer text */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e7ff; /* Light indigo track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1; /* Indigo thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5; /* Darker indigo on hover */
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-700">Viva</h1>
+            <p class="text-lg text-gray-500 mt-2">Key Questions & Answers - Full List</p>
+        </header>
+
+        <div id="qa-container" class="space-y-8">
+            </div>
+    </div>
+
+    <script>
+        const vivaData = [
+            // UNIT I
+            {
+                unit: "UNIT - I: Signals, Systems, and Transforms",
+                questions: [
+                    {
+                        q: "1. What is the difference between a continuous-time signal and a discrete-time signal? Give an example of each.",
+                        a: "<strong>Continuous-Time Signal:</strong> Defined for every instant of time. Its amplitude can vary continuously over time. Example: An analog audio signal from a microphone, temperature varying throughout the day.<br><strong>Discrete-Time Signal:</strong> Defined only at discrete instants of time. It's often obtained by sampling a continuous-time signal. Example: Daily stock market closing values, a digital audio signal."
+                    },
+                    {
+                        q: "2. How are systems classified based on linearity and time-invariance? Why are LTI systems particularly important?",
+                        a: "<strong>Linearity:</strong> A system is linear if it satisfies the superposition principle. If input `x1(t)` produces `y1(t)` and `x2(t)` produces `y2(t)`, then `ax1(t) + bx2(t)` must produce `ay1(t) + by2(t)`.<br><strong>Time-Invariance:</strong> A system is time-invariant if a time shift in the input signal causes an identical time shift in the output. If `x(t)` produces `y(t)`, then `x(t-T)` produces `y(t-T)`.<br><strong>LTI Systems Importance:</strong> Crucial because their behavior can be fully characterized by their impulse response. Many complex systems can be approximated as LTI, and powerful mathematical tools are readily applicable."
+                    },
+                    {
+                        q: "3. Define the Laplace Transform and its Region of Convergence (ROC). Why is the ROC significant?",
+                        a: "<strong>Laplace Transform:</strong> `F(s) = ∫[0, ∞] f(t)e^(-st) dt`. Transforms a time-domain function to a complex frequency-domain function.<br><strong>ROC:</strong> The set of `s` values for which the integral converges.<br><strong>ROC Significance:</strong> Uniquely defines `f(t)` from `F(s)`, determines causality and stability (ROC includes `jω`-axis for stable systems, right-half plane for causal)."
+                    },
+                    {
+                        q: "4. State two important properties of the Laplace Transform and explain their utility in system analysis.",
+                        a: "<strong>Linearity:</strong> `L{af1(t) + bf2(t)} = aF1(s) + bF2(s)`. Utility: Analyze systems with multiple inputs by superposition.<br><strong>Time Differentiation:</strong> `L{df(t)/dt} = sF(s) - f(0-)`. Utility: Transforms differential equations into algebraic equations, simplifying circuit/system modeling."
+                    },
+                    {
+                        q: "5. Define the z-Transform. How is it used for discrete-time systems, and what is its ROC?",
+                        a: "<strong>z-Transform:</strong> `X(z) = Σ[n=-∞, ∞] x[n]z^(-n)`. Transforms a discrete-time sequence to a complex frequency-domain function.<br><strong>Usage:</strong> Converts difference equations into algebraic equations for analyzing discrete-time systems (transfer function, stability).<br><strong>ROC:</strong> The set of `z` values for which the sum converges. Essential for uniqueness and system properties."
+                    },
+                    {
+                        q: "6. What is the Fourier Series used for? Briefly explain Dirichlet's conditions.",
+                        a: "<strong>Fourier Series Usage:</strong> Represents a periodic continuous-time signal as an infinite sum of harmonically related sines and cosines (or complex exponentials).<br><strong>Dirichlet's Conditions:</strong> For convergence: 1. Signal `x(t)` absolutely integrable over one period. 2. Finite number of maxima/minima in one period. 3. Finite number of finite discontinuities in one period."
+                    },
+                    {
+                        q: "7. Distinguish between the Continuous-Time Fourier Transform (CTFT) and the Discrete-Time Fourier Transform (DTFT).",
+                        a: "<strong>CTFT:</strong> Transforms a non-periodic continuous-time signal `x(t)` to a continuous frequency spectrum `X(jω)`. Spectrum is continuous and generally aperiodic.<br><strong>DTFT:</strong> Transforms a non-periodic discrete-time signal `x[n]` to a frequency spectrum `X(e^(jω))`. Spectrum is continuous in frequency but periodic with period `2π`."
+                    },
+                    {
+                        q: "8. How is a system's transfer function related to its impulse response using the Laplace Transform (for continuous-time) or z-Transform (for discrete-time)?",
+                        a: "<strong>Continuous-Time (Laplace):</strong> Transfer function `H(s)` is the Laplace Transform of the impulse response `h(t)`. `H(s) = L{h(t)}`.<br><strong>Discrete-Time (z-Transform):</strong> Transfer function `H(z)` is the z-Transform of the impulse response `h[n]`. `H(z) = Z{h[n]}`."
+                    }
+                ]
+            },
+            // UNIT II
+            {
+                unit: "UNIT - II: System Modeling and Transient Response",
+                questions: [
+                    {
+                        q: "9. How do you formulate a differential equation to model a series RLC circuit?",
+                        a: "Apply KVL: `v(t) = R i(t) + L (di(t)/dt) + (1/C) ∫ i(t) dt`. Differentiate to get: `dv(t)/dt = R (di(t)/dt) + L (d²i(t)/dt²) + (1/C) i(t)`. Alternatively, use capacitor voltage `v_c(t)` and `i(t) = C (dv_c(t)/dt)`."
+                    },
+                    {
+                        q: "10. What is meant by the transient response of a circuit? What factors determine its nature?",
+                        a: "<strong>Transient Response:</strong> The temporary part of a circuit's response to an input change that dies out over time before reaching steady state.<br><strong>Factors:</strong> Circuit components (R,L,C values), configuration, input signal type, initial conditions, and damping."
+                    },
+                    {
+                        q: "11. Describe the typical transient current response of a series RL circuit to a step voltage input `V`.",
+                        a: "Current `i(t) = (V/R)(1 - e^(-Rt/L))` for `t ≥ 0`. Current rises exponentially from 0 (inductor initially open) towards steady-state `V/R` (inductor eventually short) with time constant `τ = L/R`."
+                    },
+                    {
+                        q: "12. Explain how the Laplace Transform simplifies the analysis of transient responses in circuits compared to classical methods.",
+                        a: "Laplace Transform converts differential equations into algebraic equations in the `s`-domain. Initial conditions are directly incorporated. Solving is algebraic, and inverse transform gives the time response. This is more systematic than solving differential equations directly, especially for complex circuits."
+                    },
+                    {
+                        q: "13. What is the role of initial conditions in determining the transient response of a circuit using Laplace Transforms?",
+                        a: "Initial conditions (`i(0-)` for inductors, `v_c(0-)` for capacitors) represent stored energy. Laplace Transform derivative properties (`L{df/dt} = sF(s) - f(0-)`) directly include these, ensuring the solution reflects the circuit's state at `t=0` and accurately predicts the transient behavior."
+                    }
+                ]
+            },
+            // UNIT III
+            {
+                unit: "UNIT - III: AC Circuits and Network Analysis",
+                questions: [
+                    {
+                        q: "14. What is a phasor in AC circuit analysis, and how does it represent sinusoidal voltages and currents?",
+                        a: "<strong>Phasor:</strong> A complex number representing the amplitude and phase of a sinusoid (`v(t) = V_m cos(ωt + φ)`  -> `V = V_m ∠φ`). It 'freezes' the sinusoid at `t=0`, allowing AC problems to be solved algebraically with complex numbers."
+                    },
+                    {
+                        q: "15. Define impedance (Z) and admittance (Y). How are they calculated for R, L, C in AC circuits?",
+                        a: "<strong>Impedance (Z):</strong> Total opposition to AC current, `Z = R + jX = V/I` (Ohms).<br><strong>Admittance (Y):</strong> Reciprocal of impedance, `Y = 1/Z = G + jB` (Siemens).<br><strong>Calculations:</strong> `Z_R = R`; `Z_L = jωL`; `Z_C = 1/(jωC) = -j/(ωC)`. `Y` is the reciprocal of these."
+                    },
+                    {
+                        q: "16. Explain the basic principle of Mesh Analysis (or Loop Analysis) for solving AC circuits.",
+                        a: "Based on KVL. 1. Identify meshes. 2. Assign mesh currents. 3. Apply KVL around each mesh (`ΣIZ = ΣV_source`). 4. Solve the system of linear algebraic equations for mesh currents."
+                    },
+                    {
+                        q: "17. Explain the basic principle of Nodal Analysis for solving AC circuits.",
+                        a: "Based on KCL. 1. Identify principal nodes. 2. Select a reference node (0V). 3. Assign node voltages. 4. Apply KCL at each non-reference node (`ΣI_leaving = ΣI_entering`). 5. Solve the system of linear algebraic equations for node voltages."
+                    },
+                    {
+                        q: "18. State Thevenin's Theorem. How can it be practically applied to simplify circuit analysis?",
+                        a: "<strong>Theorem:</strong> Any linear two-terminal network can be replaced by an equivalent circuit: a voltage source `V_th` in series with an impedance `Z_th`.<br><strong>Application:</strong> `V_th` is open-circuit voltage. `Z_th` is impedance seen from terminals with sources off. Simplifies analysis of load behavior connected to complex networks."
+                    },
+                    {
+                        q: "19. What is resonance in an RLC circuit? Differentiate between series and parallel resonance.",
+                        a: "<strong>Resonance:</strong> `X_L = X_C`. Circuit behaves resistively. `f_0 = 1 / (2π√(LC))`.<br><strong>Series Resonance:</strong> Min impedance (`Z=R`), max current. Voltage magnification across L & C.<br><strong>Parallel Resonance:</strong> Max impedance, min line current. Current magnification in LC tank."
+                    },
+                    {
+                        q: "20. What are two-port networks? Give an example of parameters used to describe them (e.g., Z-parameters or Y-parameters).",
+                        a: "<strong>Two-Port Network:</strong> Network with an input port and an output port. Models components like transistors, filters.<br><strong>Z-parameters:</strong> `V1 = Z11*I1 + Z12*I2`, `V2 = Z21*I1 + Z22*I2`. Relate port voltages to port currents."
+                    },
+                    {
+                        q: "21. Briefly describe the function of basic passive filters (low-pass and high-pass).",
+                        a: "<strong>Low-Pass Filter (LPF):</strong> Passes low frequencies, attenuates high frequencies. Cutoff frequency defines transition.<br><strong>High-Pass Filter (HPF):</strong> Passes high frequencies, attenuates low frequencies. Has a cutoff frequency."
+                    }
+                ]
+            },
+            // UNIT IV
+            {
+                unit: "UNIT - IV: Graph Theory and Advanced Network Concepts",
+                questions: [
+                    {
+                        q: "22. In graph theory for circuits, what is a 'tree' and a 'co-tree'?",
+                        a: "<strong>Tree:</strong> A connected subgraph including all nodes but no loops. Has `N-1` branches (twigs) for `N` nodes.<br><strong>Co-tree:</strong> Branches of the original graph not in the tree. These are 'links' or 'chords'."
+                    },
+                    {
+                        q: "23. What is the fundamental concept behind using a tie-set matrix for network analysis?",
+                        a: "A tie-set (fundamental loop) is formed by one link + tree branches. Tie-set matrix (`B`) relates branch currents to loop currents. Based on KVL (`B * V_branch = 0`). Systematically writes loop equations."
+                    },
+                    {
+                        q: "24. What is the fundamental concept behind using a cut-set matrix for network analysis?",
+                        a: "A cut-set separates a graph. Fundamental cut-set uses one twig + links. Cut-set matrix (`Q`) relates branch voltages to node voltages. Based on KCL (`Q * I_branch = 0`). Systematically writes nodal equations."
+                    },
+                    {
+                        q: "25. Name two different sets of parameters used to characterize two-port networks.",
+                        a: "1. <strong>Z-parameters (Impedance):</strong> `V1 = Z11*I1 + Z12*I2`, `V2 = Z21*I1 + Z22*I2`.<br>2. <strong>Y-parameters (Admittance):</strong> `I1 = Y11*V1 + Y12*V2`, `I2 = Y21*V1 + Y22*V2`."
+                    },
+                    {
+                        q: "26. If two 2-port networks are cascaded, which set of parameters is most convenient for finding the overall parameters of the combination?",
+                        a: "<strong>ABCD parameters (Transmission parameters)</strong>. The overall ABCD matrix is the product of individual ABCD matrices: `[T] = [T_A] * [T_B]`."
+                    },
+                    {
+                        q: "27. What are open-circuit and short-circuit impedances for a two-port network?",
+                        a: "<strong>Open-Circuit Input Impedance (`Z11`):</strong> `V1/I1` with `I2 = 0`.<br><strong>Open-Circuit Output Impedance (`Z22`):</strong> `V2/I2` with `I1 = 0`. <br>(Short-circuit admittances are `Y11 = I1/V1` with `V2=0` and `Y22 = I2/V2` with `V1=0`. Short-circuit impedances are reciprocals of these.)"
+                    },
+                    {
+                        q: "28. What is a network function? What can you infer from its poles and zeros?",
+                        a: "<strong>Network Function:</strong> Ratio of Laplace transform of output to input (e.g., `H(s) = V_out(s)/V_in(s)`), with zero initial conditions.<br><strong>Zeros:</strong> `s` values where `H(s)=0` (output is zero).<br><strong>Poles:</strong> `s` values where `H(s)=∞` (determine natural response).<br><strong>Inference:</strong> Stability (poles in LHP for stable), frequency response shape, transient behavior."
+                    },
+                    {
+                        q: "29. What is a Hurwitz polynomial, and why is this property significant in network theory?",
+                        a: "<strong>Hurwitz Polynomial:</strong> All its roots (zeros) are in the left-half of the s-plane (LHP). (Modified Hurwitz allows simple `jω`-axis roots).<br><strong>Significance:</strong> 1. Denominator of a stable LTI system's transfer function must be Hurwitz. 2. Essential for realizability of passive RLC networks (driving point functions require Hurwitz polynomials)."
+                    },
+                    {
+                        q: "30. Briefly explain Y-Δ (Star-Delta) transformation and its utility.",
+                        a: "<strong>Y-Δ Transformation:</strong> Converts a star (Y) configuration of 3 impedances to an equivalent delta (Δ), or vice-versa.<br><strong>Utility:</strong> Simplifies complex networks not reducible by series/parallel methods (e.g., bridge circuits), aids in analysis, useful in three-phase systems."
+                    }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('qa-container');
+
+        vivaData.forEach(unitData => {
+            // Create Unit Header
+            const unitDiv = document.createElement('div');
+            unitDiv.className = 'mb-6 rounded-lg shadow-md overflow-hidden'; // Added overflow-hidden for clean rounded corners
+            
+            const unitHeader = document.createElement('h2');
+            unitHeader.className = 'unit-header text-2xl font-semibold p-4';
+            unitHeader.textContent = unitData.unit;
+            unitDiv.appendChild(unitHeader);
+
+            // Create Questions and Answers for the Unit
+            const questionsContainer = document.createElement('div');
+            questionsContainer.className = 'bg-white divide-y divide-gray-200'; // Add divider between Q&A blocks
+            
+            unitData.questions.forEach((qa, index) => {
+                const qaBlock = document.createElement('div');
+                qaBlock.className = 'p-4 question-block'; // Removed individual border, using divide-y now
+
+                // Question Text
+                const qText = document.createElement('p');
+                qText.className = 'question-text mb-2 text-lg'; // Made question text slightly larger
+                qText.innerHTML = qa.q; 
+                qaBlock.appendChild(qText);
+
+                // Answer Text
+                const aText = document.createElement('p');
+                aText.className = 'answer-text leading-relaxed text-base';
+                aText.innerHTML = `<strong>A:</strong> ${qa.a}`; 
+                qaBlock.appendChild(aText);
+                
+                questionsContainer.appendChild(qaBlock);
+            });
+            unitDiv.appendChild(questionsContainer);
+            container.appendChild(unitDiv);
+        });
+    </script>
+</body>
+</html>
